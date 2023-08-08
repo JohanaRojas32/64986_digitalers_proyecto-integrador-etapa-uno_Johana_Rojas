@@ -1,0 +1,42 @@
+body {
+    background-image: linear-gradient(orange, black);
+}
+
+
+
+/* nosotros */
+
+.titulo-destacado span{
+    color: #FF8400;
+}
+
+.nosotros-iconos li {
+    margin: 0;
+    padding: 0;
+    display: inline-block
+}
+
+.nosotros-iconos {
+    margin: 3em 0;
+}
+
+.nosotros-iconos i {
+    margin-right: .8em;
+    padding: 0;
+}
+
+.nosotros-iconos i.fb {
+    color: #1877f2 ;
+}
+
+.nosotros-iconos i.ig {
+    background-image: linear-gradient(#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6);
+}
+
+.nosotros-iconos i.tw {
+    color: #1da1f2;
+}
+
+.nosotros-iconos i.im {
+    color: crimson;
+}
