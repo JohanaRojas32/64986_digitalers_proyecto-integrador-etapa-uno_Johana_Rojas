@@ -1,10 +1,48 @@
-body {
-    background-image: linear-gradient(orange, black);
+:root {
+    --colorblanco: #E5E5CB;
+    
+}
+
+
+body {  
+    background-color: #303030e3;
+}
+
+
+/* index */
+
+.navbar-expand-lg.joha-nav {
+    background-color: #1A120B;
+}
+
+.joha.nav-link.active {
+    color: var(--colorblanco);
+}
+
+.joha.nav-link {
+    color: var(--colorblanco);
+}
+
+.d-flex i.carrito {
+    color: var(--colorblanco);
+}
+
+.card.joha-card {
+    background-image: linear-gradient(#beb9b9, #dad8d7);
+}
+
+
+.row.joha-carousel.my-5 {
+    width: 80%;
 }
 
 
 
 /* nosotros */
+
+.titulo-destacado {
+    color: var(--colorblanco);
+}
 
 .titulo-destacado span{
     color: #FF8400;
@@ -30,7 +68,8 @@ body {
 }
 
 .nosotros-iconos i.ig {
-    background-image: linear-gradient(#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6);
+    background: linear-gradient(#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6);
+    /* color: (#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6); */
 }
 
 .nosotros-iconos i.tw {
@@ -40,3 +79,28 @@ body {
 .nosotros-iconos i.im {
     color: crimson;
 }
+
+
+
+
+/* carrito */
+
+.tarjetas img {
+    width: 5em;
+}
+
+.joha-carrito {
+    background-color: #d6d6d6de;
+}
+
+
+
+
+
+
+/* contacto */
+
+.joha-form {
+    background-color: #eee ;
+}
+
