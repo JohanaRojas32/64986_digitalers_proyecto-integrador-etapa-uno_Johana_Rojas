@@ -32,8 +32,32 @@ body {
 }
 
 
-.row.joha-carousel.my-5 {
+.joha-carousel {
     width: 80%;
+}
+
+
+
+
+
+.iconos-footer li {
+    margin: 0;
+    padding: 0;
+    display: inline-block
+}
+
+.joha-footer {
+    background-color: #1f1e1e;
+}
+
+.joha.iconos-footer i {
+    color: var(--colorblanco);
+    margin: .8em;
+    padding: 0;
+}
+
+.joha.iconos-footer i.fb {
+  border-radius: 50%;
 }
 
 
@@ -68,8 +92,12 @@ body {
 }
 
 .nosotros-iconos i.ig {
-    background: linear-gradient(#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6);
+    /* background: linear-gradient(#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6); */
     /* color: (#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6); */
+
+    background: -webkit-linear-gradient(#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nosotros-iconos i.tw {
