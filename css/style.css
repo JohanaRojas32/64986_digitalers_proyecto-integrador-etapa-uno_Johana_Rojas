@@ -98,6 +98,7 @@ body {
     background: -webkit-linear-gradient(#ffdc80,#fcaf45,#f77737,#f56040,#fd1d1d,#e1306c,#c13584,#833ab4,#5851db,#405de6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text
 }
 
 .nosotros-iconos i.tw {
@@ -122,7 +123,32 @@ body {
 }
 
 
+.carrito-lista {
+    border-radius: 4px;
+}
 
+.carrito-boton {
+    background-color: #33a307c0;
+    box-shadow: -.6px .7px gray;
+}
+
+.carrito-boton:hover {
+    background-color: #2f9606c0;
+    box-shadow: -.3px .4px gray;
+
+}
+
+.joha-eliminar-producto {
+    background-color: #f52626;
+    color: white;
+    box-shadow: -.6px .7px gray;
+}
+
+.joha-eliminar-producto:hover {
+    background-color: #e92424;
+    color: white;
+    box-shadow: -.3px .4px gray;
+}
 
 
 
