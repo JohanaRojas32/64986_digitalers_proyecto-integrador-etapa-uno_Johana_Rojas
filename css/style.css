@@ -85,7 +85,13 @@ body {
 .nosotros-iconos i {
     margin-right: .8em;
     padding: 0;
+    transform: scale(100% , 100%);
 }
+
+.nosotros-iconos i:hover {
+    transform: scale(110% , 110%);
+}
+
 
 .nosotros-iconos i.fb {
     color: #1877f2 ;
@@ -133,7 +139,7 @@ body {
 }
 
 .carrito-boton:hover {
-    background-color: #2f9606c0;
+    background-color: #33a307c0;
     box-shadow: -.3px .4px gray;
 
 }
