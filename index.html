@@ -33,11 +33,33 @@
 
       </div>
     
-      <div class="d-flex carrito-index">
-        <a href="pages/carrito.html" class="text-reset me-4"><i class="fa-solid fa-cart-shopping fa-xl carrito"></i>
+      <div class="d-flex carrito-index me-2">
+      <div class="dropdown dropstart">
+        <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-cart-shopping fa-xl carrito"></i>
         </a>
-      </div>
+        <ul class="dropdown-menu mx-2">
+          <table id="lista-carrito" class="table">
+            <thead>
+              <tr>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+          <div class="d.grid gap-2 d-md-block justify-content-center ms-1">
+            <button id="vaciar-carrito" class="btn btn-primary">Vaciar carrito</button>
+            <button id="procesar-pedido" class="btn btn-danger">Procesar compra</button>
 
+          </div>
+        </ul>
+      </div>
+    </div>
     </div>
 
     
