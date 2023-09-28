@@ -103,7 +103,23 @@ function guardarProductosEnLS(unProducto) {
 // con un evento (en el main.js)
 
 export function leerLocalStorage() {
-
+    let productosLS
+    productosLS = queHayEnLS()
+    productosLS.forEach(function(unProducto) {
+        const fila = document.createElement('tr')
+        fila.innerHTML = 
+        `
+        <td>
+        <img src="${unProducto.imagen}" alt="${unProducto.titulo}" width="100">
+    </td>
+    <td>${unProducto.titulo}</td>
+    <td>${unProducto.precio}</td>
+    <td>
+        <a href="#" class="borrar-producto fas fa-times-circle" data-id="${unProducto.id}"></a>
+    </td>
+        `
+        listaDeProductos.appendChild(fila)
+    })
 }
 
 
