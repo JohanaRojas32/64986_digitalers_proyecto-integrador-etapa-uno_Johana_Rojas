@@ -2,7 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 import './css/style.css'
-import { comprarProducto, leerLocalStorage } from './src/carrito'
+import { 
+    comprarProducto, 
+    leerLocalStorage 
+} from './src/carrito'
 
 
 
