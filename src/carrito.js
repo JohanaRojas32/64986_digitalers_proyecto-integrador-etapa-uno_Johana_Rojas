@@ -167,3 +167,29 @@ function vaciarLocalStorageTambien() {
     window.localStorage.clear()
 }
 
+
+// BOTON PROCESAR PEDIDO:
+export function procesarPedido(e) {
+    //e.preventDefault    - se podria poner pero no hace falta porque no es a ni form
+
+    //verifico si tengo productos:
+    if (queHayEnLS().length === 0 ) {
+        console.warn('el carrito esta vacio')
+    } else {
+        location.href = 'pages/carrito.html'  
+    }
+}
+
+
+
+// para que  pages/carrito.html lea el carrito del index.html (uso el LS):
+
+export function leerLocalSToragePedido() {
+    let productosLS
+    productosLS = queHayEnLS()
+    productosLS.forEach(function(unProducto){
+        
+    })
+}
+
+

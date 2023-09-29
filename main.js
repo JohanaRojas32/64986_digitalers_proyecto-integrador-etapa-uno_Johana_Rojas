@@ -5,7 +5,9 @@ import './css/style.css'
 import { 
     comprarProducto, 
     eliminarProducto, 
+    leerLocalSToragePedido, 
     leerLocalStorage, 
+    procesarPedido, 
     vaciarCarrito
 } from './src/carrito'
 
@@ -24,16 +26,36 @@ cargarEventos()
 
 function cargarEventos() { 
 
-    const vaciarCarritoBtn = carritoGeneral.querySelector('#vaciar-carrito')
+    const ruta = String(location.href)
+    if( !ruta.includes('carrito.html')) {
 
-    productosTodos.addEventListener('click', (e) => comprarProducto(e)) 
-
-    document.addEventListener('DOMContentLoaded', leerLocalStorage())
-
-    carritoGeneral.addEventListener('click', e => eliminarProducto(e))
-
-    vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
+        esIndex()
+    } else {
+        console.log('estoy en carrito')
+        document.addEventListener('DOMContentLoaded', leerLocalSToragePedido())
+    }
 }
+
+
+
+    function esIndex {
+    console.log('no estoy en carrito')
+
+        const vaciarCarritoBtn = carritoGeneral.querySelector('#vaciar-carrito')
+        const procesarPedidoBtn = carritoGeneral.querySelector('#procesar-pedido')
+    
+        productosTodos.addEventListener('click', (e) => comprarProducto(e)) 
+    
+        document.addEventListener('DOMContentLoaded', leerLocalStorage())
+    
+        carritoGeneral.addEventListener('click', e => eliminarProducto(e))
+    
+        vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
+    
+        procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
+    }
+
+
 
 
 
