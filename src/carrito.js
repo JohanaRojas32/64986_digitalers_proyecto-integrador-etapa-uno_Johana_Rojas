@@ -125,9 +125,30 @@ export function leerLocalStorage() {
 
 // Al apretar la "x" del carrito que se elimine del carrito y del LS:
 export function eliminarProducto(e) {
-    
+    e.preventDefault()
+    let unProducto, unProductoID
+    if (e.target.classList.contains('borrar-producto')) {     // clase que le puse al icono "x"
+
+    unProducto = e.target.parentElement.parentElement   // producto entero
+    unProductoID = unProducto.querySelector('a').getAttribute('data-id')
+    unProducto.remove()
+
+    eliminarProductoDelLS(unProductoID)
+
+    }
 }
 
+// eliminar prod por ID del LS:
 
+function eliminarProductoDelLS(unProductoID) {
+    let productosLS
+    productosLS = queHayEnLS()
+    //comparamos ID del producto a eliminar y el que esta en el LS:
+    productosLS.forEach(function(unProductoLS, index){
+        if(unProductoLS.id === unProductoID)  // prod del LS / prod que me llega al apretar "x"
+        productosLS.splice(index, 1)
+    })
+    localStorage.setItem('productosTodos', JSON.stringify(productosLS))
+}
 
 
