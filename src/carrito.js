@@ -156,6 +156,14 @@ function eliminarProductoDelLS(unProductoID) {
 
 // BOTON VACIAR CARRITO:
 export function vaciarCarrito(e) {
-    
+    e.preventDefault()
+    while(listaDeProductos.firstChild) {  // while -> mientras
+        listaDeProductos.removeChild(listaDeProductos.firstChild)
+    }
+    vaciarLocalStorageTambien()
 } 
+
+function vaciarLocalStorageTambien() {
+    window.localStorage.clear()
+}
 

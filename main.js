@@ -21,10 +21,10 @@ const carritoGeneral = document.getElementById('carrito-ul')
 cargarEventos()
 
 
+
 function cargarEventos() { 
 
-    const vaciarCarritoBtn = carritoGeneral.querySelector('vaciar-carrito')
-
+    const vaciarCarritoBtn = carritoGeneral.querySelector('#vaciar-carrito')
 
     productosTodos.addEventListener('click', (e) => comprarProducto(e)) 
 
