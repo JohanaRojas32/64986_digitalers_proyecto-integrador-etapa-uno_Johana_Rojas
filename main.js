@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import './css/style.css'
 import { 
     comprarProducto, 
+    eliminarProducto, 
     leerLocalStorage 
 } from './src/carrito'
 
@@ -24,6 +25,8 @@ function cargarEventos() {
     productosTodos.addEventListener('click', (e) => comprarProducto(e)) 
 
     document.addEventListener('DOMContentLoaded', leerLocalStorage())
+
+    carritoGeneral.addEventListener('click', e => eliminarProducto(e))
 }
 
 

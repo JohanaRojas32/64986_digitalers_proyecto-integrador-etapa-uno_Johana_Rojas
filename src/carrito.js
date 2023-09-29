@@ -123,5 +123,11 @@ export function leerLocalStorage() {
 }
 
 
+// Al apretar la "x" del carrito que se elimine del carrito y del LS:
+export function eliminarProducto(e) {
+    
+}
+
+
 
 
