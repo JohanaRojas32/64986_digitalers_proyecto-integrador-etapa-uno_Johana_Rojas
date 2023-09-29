@@ -152,3 +152,10 @@ function eliminarProductoDelLS(unProductoID) {
 }
 
 
+
+
+// BOTON VACIAR CARRITO:
+export function vaciarCarrito(e) {
+    
+} 
+

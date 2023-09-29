@@ -5,7 +5,8 @@ import './css/style.css'
 import { 
     comprarProducto, 
     eliminarProducto, 
-    leerLocalStorage 
+    leerLocalStorage, 
+    vaciarCarrito
 } from './src/carrito'
 
 
@@ -22,11 +23,16 @@ cargarEventos()
 
 function cargarEventos() { 
 
+    const vaciarCarritoBtn = carritoGeneral.querySelector('vaciar-carrito')
+
+
     productosTodos.addEventListener('click', (e) => comprarProducto(e)) 
 
     document.addEventListener('DOMContentLoaded', leerLocalStorage())
 
     carritoGeneral.addEventListener('click', e => eliminarProducto(e))
+
+    vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
 }
 
 
