@@ -1,6 +1,6 @@
 const listaDeProductos = document.querySelector('#lista-carrito tbody')
 //console.log(listaDeProductos)
-
+const listaCompra = document.querySelector('#lista-compra')
 
 export function comprarProducto(e) {
     e.preventDefault()
@@ -20,10 +20,12 @@ function aparecerDatosProducto(unProducto) {
         imagen: unProducto.querySelector('img').src,
         titulo: unProducto.querySelector('h5').textContent,
         precio: unProducto.querySelector('.precio').textContent,
+        tipo: unProducto.querySelector('.tipo').textContent,
+        calidad: unProducto.querySelector('.calidad').textContent,
         id: unProducto.querySelector('a').getAttribute('data-id'),
         cantidad: 1
     }
-    //console.log(infoProducto)      //comprobe que esta bien.
+    console.log(infoProducto)      //comprobe que esta bien.
 
 
     //! Ahora quiero guardar la info del carrito en el LS
@@ -182,14 +184,68 @@ export function procesarPedido(e) {
 
 
 
+/* --------------------- */
+/* pages/carrito.html : */
+/* ------------------- */
+
 // para que  pages/carrito.html lea el carrito del index.html (uso el LS):
 
 export function leerLocalSToragePedido() {
     let productosLS
     productosLS = queHayEnLS()
-    productosLS.forEach(function(unProducto){
+    productosLS.forEach(function(unProducto) {
+        const div = document.createElement('div')
+        div.classList.add('row', 'py-3', 'mb-3')   // clase del papa div de la card
+        div.innerHTML = `
         
+        <div class="col-4 mb-1">
+          <div class="bg-image rounded">
+            <img class="w-100" src="${unProducto.imagen}" alt="${unProducto.titulo}">
+          </div>
+        </div>
+
+        <div class="col-6">
+          <p><strong>${unProducto.titulo}</strong></p>
+          <p>${unProducto.tipo}</p>
+          <p>${unProducto.calidad}</p>
+          <p>${unProducto.precio}</p>
+
+          <a data-id=${unProducto.id} type="button" class=" fa-solid fa-trash-can text-danger btn-sm me-1 mb-2 borrar-producto-tachito"></a>
+
+        </div>
+
+        <div class="col-2">
+          <input type="text" class="form-control text-center " placeholder="Cantidad" value="${unProducto.cantidad}">
+          <p class="text-center mt-2"><strong>${unProducto.precio}</strong></p>
+        </div>
+        
+        `
+   listaCompra.appendChild(div)
     })
 }
+
+
+
+// DARLE FUNCION eliminar AL TACHITO:
+
+export const eliminarProductoTachito = (e) => {
+    e.preventDefault
+    let unProductoID
+    //para que sea al clickear sobre el tachito:
+    if (e.target.classList.contains('borrar-producto-tachito')){
+        e.target.parentElement.parentElement.remove()
+        
+        //para que se borre del ls tambien:
+        let unProducto = e.target.parentElement.parentElement
+        unProductoID = unProducto.querySelector('a').getAttribute('data-id')
+    }
+    eliminarProductoDelLS(unProductoID)
+}
+
+
+
+// logica para suma o resta del mismo producto:
+
+
 
 

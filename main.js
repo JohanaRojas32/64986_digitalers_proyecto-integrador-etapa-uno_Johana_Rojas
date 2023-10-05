@@ -5,6 +5,7 @@ import './css/style.css'
 import { 
     comprarProducto, 
     eliminarProducto, 
+    eliminarProductoTachito, 
     leerLocalSToragePedido, 
     leerLocalStorage, 
     procesarPedido, 
@@ -18,6 +19,8 @@ const productosTodos = document.getElementById('card-productos')
 
 const carritoGeneral = document.getElementById('carrito-ul')
 //console.log(carritoUl)
+
+const tachitoPagesCarrito = document.getElementById('lista-compra')
 
 
 cargarEventos()
@@ -33,12 +36,15 @@ function cargarEventos() {
     } else {
         console.log('estoy en carrito')
         document.addEventListener('DOMContentLoaded', leerLocalSToragePedido())
+
+        tachitoPagesCarrito.addEventListener('click', e => eliminarProductoTachito(e))
+    
     }
 }
 
 
 
-    function esIndex {
+    function esIndex() {
     console.log('no estoy en carrito')
 
         const vaciarCarritoBtn = carritoGeneral.querySelector('#vaciar-carrito')
