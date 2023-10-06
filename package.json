@@ -12,7 +12,6 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "bootstrap": "^5.3.1",
-    "sweetalert2": "^11.7.31"
+    "bootstrap": "^5.3.1"
   }
 }

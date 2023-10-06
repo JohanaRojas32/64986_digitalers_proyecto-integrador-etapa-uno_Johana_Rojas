@@ -178,6 +178,12 @@ export function procesarPedido(e) {
     //verifico si tengo productos:
     if (queHayEnLS().length === 0 ) {
         console.warn('el carrito esta vacio')
+        Swal.fire({
+            title: 'Upsss!',
+            text: '¡El carrito está vacio!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          })
     } else {
         location.href = 'pages/carrito.html'  
     }

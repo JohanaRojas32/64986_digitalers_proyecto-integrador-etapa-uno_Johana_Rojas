@@ -16,6 +16,7 @@ import {
 
 
 
+
 const productosTodos = document.getElementById('card-productos')
 //console.log(productosTodos)
 
@@ -57,6 +58,8 @@ function cargarEventos() {
         vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
     
         procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
+    
+
     }
 
 
