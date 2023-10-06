@@ -3,6 +3,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 import './css/style.css'
 import { 
+    calcularTotal,
+    cambioDeCantidad,
     comprarProducto, 
     eliminarProducto, 
     eliminarProductoTachito, 
@@ -20,7 +22,7 @@ const productosTodos = document.getElementById('card-productos')
 const carritoGeneral = document.getElementById('carrito-ul')
 //console.log(carritoUl)
 
-const tachitoPagesCarrito = document.getElementById('lista-compra')
+const pagesCarritoCompra = document.getElementById('lista-compra')
 
 
 cargarEventos()
@@ -34,11 +36,7 @@ function cargarEventos() {
 
         esIndex()
     } else {
-        console.log('estoy en carrito')
-        document.addEventListener('DOMContentLoaded', leerLocalSToragePedido())
-
-        tachitoPagesCarrito.addEventListener('click', e => eliminarProductoTachito(e))
-    
+        esCarrito()
     }
 }
 
@@ -62,6 +60,17 @@ function cargarEventos() {
     }
 
 
+    function esCarrito() {
+        console.log('estoy en carrito')
+        document.addEventListener('DOMContentLoaded', leerLocalSToragePedido())
+
+        pagesCarritoCompra.addEventListener('click', e => eliminarProductoTachito(e))
+        
+        calcularTotal()
+        
+        pagesCarritoCompra.addEventListener('change', e => cambioDeCantidad(e))
+        pagesCarritoCompra.addEventListener('keyup', e => cambioDeCantidad(e))
+    }
 
 
 

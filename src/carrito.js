@@ -25,6 +25,7 @@ function aparecerDatosProducto(unProducto) {
         id: unProducto.querySelector('a').getAttribute('data-id'),
         cantidad: 1
     }
+   
     console.log(infoProducto)      //comprobe que esta bien.
 
 
@@ -215,8 +216,10 @@ export function leerLocalSToragePedido() {
         </div>
 
         <div class="col-2">
-          <input type="text" class="form-control text-center " placeholder="Cantidad" value="${unProducto.cantidad}">
-          <p class="text-center mt-2"><strong>${unProducto.precio}</strong></p>
+          <input type="number" min="1" class="form-control text-center cantidad-productos" placeholder="Cantidad" value="${unProducto.cantidad}">
+          <p class="text-center mt-2">
+
+          <strong class="precio-final">${unProducto.precio * unProducto.cantidad}</strong></p>
         </div>
         
         `
@@ -246,6 +249,63 @@ export const eliminarProductoTachito = (e) => {
 
 // logica para suma o resta del mismo producto:
 
+export const cambioDeCantidad = (e) => {
+    e.preventDefault
+    //console.log(e.target)
+
+    let id, cantidad, unProducto, productosLS
+    if (e.target.classList.contains('cantidad-productos')) {
+
+        // producto total:
+    unProducto = e.target.parentElement.parentElement
+    //console.log(unProducto)
+
+        // identificar que elemento cambia:
+    id = unProducto.querySelector('a').getAttribute('data-id')
+    //console.log(id)
+
+        // identificar la cantidad:
+    cantidad = unProducto.querySelector('input').value
+    //console.log(cantidad)
+
+        // ahora multiplicar el precio:
+   let precioFinal = unProducto.querySelector('.precio-final')
+    
+    productosLS = queHayEnLS()
+    productosLS.forEach(function (unProductoLS, index) {
+        if ( unProductoLS.id === id) {   //comparo id ls con id de compra
+            unProductoLS.cantidad = cantidad
+            //console.log(unProductoLS.cantidad)
+            //console.log(unProductoLS.precio)
+        
+        let total = Number(unProductoLS.cantidad) * Number(unProductoLS.precio)
+        precioFinal.textContent = total.toFixed(3)
+        //console.log(total)
+        }
+    })
+    localStorage.setItem('productosTodos', JSON.stringify(productosLS))
+    calcularTotal()
+    }
+}
 
 
+
+export function calcularTotal() {
+    let productosLS
+    let total = 0, subtotal = 0, impuestos = 0
+    productosLS = queHayEnLS()
+
+    productosLS.forEach( unProductoLS => {
+        let totalProducto = Number(unProductoLS.cantidad * unProductoLS.precio)
+        total = total + totalProducto
+    })
+    impuestos = parseFloat(total * 0.18).toFixed(3)
+    subtotal = parseFloat(total - impuestos).toFixed(3)
+        // lo pasamos a la interfaz:
+        document.querySelector('#total').textContent = total.toFixed(3)
+        document.querySelector('#iva').textContent = impuestos
+        document.querySelector('#sub-total').textContent = subtotal
+
+   
+}
 

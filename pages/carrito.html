@@ -76,21 +76,32 @@
           </div>
           <div class="card-body">
             <ul class="list-group list-group-flush carrito-lista">
+              
               <li class="list-group-item d-flex justify-content-between aling-items-center border-0 ">
                 Productos
-                <span>2</span>
+                <span id="sub-total"></span>
+              </li>
+
                 <li class="list-group-item d-flex justify-content-between aling-items-center border-0">
                   Envio
                   <span>Gratis</span>
+                </li>
+
+                
+                <li class="list-group-item d-flex justify-content-between aling-items-center border-0">
+                  <div>
+                      <strong>IVA</strong>
+                  </div>
+                  <p><strong id="iva"></strong></p>
+            </li>
+
                   <li class="list-group-item d-flex justify-content-between aling-items-center border-0 ">
                     <div>
                       <strong>Total de la compra</strong>
                       <strong>IVA incluido</strong>
                     </div>
-                    <span><strong>$66,000</strong></span>
+                    <p><strong id="total"></strong></p>
                   </li>
-                </li>
-              </li>
             </ul>
 
             <button type="button" class="btn carrito-boton btn-lg btn-block mt-4">Ir a pagar</button>
