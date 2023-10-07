@@ -49,7 +49,7 @@ function cargarEventos() {
         const vaciarCarritoBtn = carritoGeneral.querySelector('#vaciar-carrito')
         const procesarPedidoBtn = carritoGeneral.querySelector('#procesar-pedido')
     
-        productosTodos.addEventListener('click', (e) => comprarProducto(e)) 
+        productosTodos.addEventListener('click', e => comprarProducto(e)) 
     
         document.addEventListener('DOMContentLoaded', leerLocalStorage())
     
