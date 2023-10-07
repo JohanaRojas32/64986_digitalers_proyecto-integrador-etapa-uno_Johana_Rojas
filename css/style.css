@@ -28,16 +28,23 @@ body {
 }
 
 .card.joha-card {
-    background-image: linear-gradient(#beb9b9, #dad8d7);
-}
+    background-color: #fcedd4bc;
+}/* #beb9b9, #dad8d7 */     /* fcedd4bc */
 
 
 .joha-carousel {
     width: 80%;
 }
 
+.agregar-carrito {
+    background-color: #e99e13;
+    box-shadow: -.6px .7px gray; ;
+}
 
-
+.agregar-carrito:hover {
+    background-color: #d1780ac3;
+    box-shadow: -.3px .4px gray;
+}
 
 
 .iconos-footer li {
@@ -125,21 +132,21 @@ body {
 }
 
 .joha-carrito {
-    background-color: #d6d6d6de;
+    background-color: #fcedd4bc;
 }
-
+/* d6d6d6de */
 
 .carrito-lista {
     border-radius: 4px;
 }
 
 .carrito-boton {
-    background-color: #33a307c0;
+    background-color: #e99e13;
     box-shadow: -.6px .7px gray;
 }
 
 .carrito-boton:hover {
-    background-color: #2e9405c0;
+    background-color: #d1780ac3;
     box-shadow: -.3px .4px gray;
 
 }

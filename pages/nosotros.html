@@ -36,6 +36,34 @@
 
         </div>
 
+        <div class="d-flex carrito-index me-2">
+          <div class="dropdown dropstart">
+            <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cart-shopping fa-xl carrito"></i>
+            </a>
+            <ul id="carrito-ul" class="dropdown-menu mx-2">
+              <table id="lista-carrito" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+              </table>
+              <div class="d.grid gap-2 d-md-block justify-content-center ms-1">
+                <button id="vaciar-carrito" class="btn btn-primary">Vaciar carrito</button>
+                <button id="procesar-pedido" class="btn btn-danger">Procesar compra</button>
+    
+              </div>
+            </ul>
+          </div>
+        </div>
+
       </div>
 
     </nav>
@@ -46,7 +74,7 @@
 
       <div class="col-5">
         <div class="nosotros-imagen">
-          <img class="img fluid col-12" src="/img/acerca-de-prueba1.webp" alt="Sobre nosotros">
+          <img class="img fluid col-12 pb-5" src="/img/acerca-de-prueba1.webp" alt="Sobre nosotros">
         </div>
       </div>
 
@@ -83,7 +111,7 @@
   </main>
 
 
-  <footer class="container-fluid joha-footer">
+  <footer class="container-fluid joha-footer mt-5">
 
     <div class="d-flex justify-content-center">
       <ul class="joha iconos-footer">
@@ -117,7 +145,7 @@
 
 
   <script type="module" src="/main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../src/carrito.js"></script>
 </body>
-
 </html>
