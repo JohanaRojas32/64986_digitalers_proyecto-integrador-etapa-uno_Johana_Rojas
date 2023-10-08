@@ -187,28 +187,10 @@ export function procesarPedido(e) {
             confirmButtonText: 'DE ACUERDO'
           })
     } else {
-        location.href = 'pages/carrito.html'  
+        location.href = ('pages/carrito.html') || ('carrito.html')
     }
 }
 
-export function procesarPedido2(e) {
-    //e.preventDefault    - se podria poner pero no hace falta porque no es a ni form
-
-    //verifico si tengo productos:
-    if (queHayEnLS().length === 0 ) {
-        console.warn('el carrito esta vacio')
-        //! ALERTA SWEETALERT:
-        Swal.fire({
-            title: 'Upsss!',
-            text: '¡El carrito está vacio!',
-            icon: 'error',
-            background: '#F8F0E5',
-            confirmButtonText: 'DE ACUERDO'
-          })
-    } else {
-        location.href = 'carrito.html'  
-    }
-}
 
 
 /* --------------------- */

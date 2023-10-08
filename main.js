@@ -10,11 +10,9 @@ import {
     eliminarProductoTachito, 
     leerLocalSToragePedido, 
     leerLocalStorage, 
-    procesarPedido, 
-    procesarPedido2, 
+    procesarPedido,  
     vaciarCarrito
 } from './src/carrito'
-
 
 
 
@@ -32,21 +30,11 @@ cargarEventos()
 
 
 function cargarEventos() { 
-
     const ruta = String(location.href)
-    if(ruta.includes('index.html')) {
-
+    if(!ruta.includes('carrito.html')) {
         esIndex()
-    } else if(ruta.includes('carrito.html')) {
-        esCarrito()
-    }
-
-    if(ruta.includes('nosotros.html')) {
-        esElResto()
-    }
-
-    if(ruta.includes('contacto.html')) {
-        esElResto()
+    } else {
+    esCarrito()
     }
 }
 
@@ -57,7 +45,7 @@ function cargarEventos() {
 
         const vaciarCarritoBtn = carritoGeneral.querySelector('#vaciar-carrito')
         const procesarPedidoBtn = carritoGeneral.querySelector('#procesar-pedido')
-    
+       
         productosTodos.addEventListener('click', e => comprarProducto(e)) 
     
         document.addEventListener('DOMContentLoaded', leerLocalStorage())
@@ -67,10 +55,9 @@ function cargarEventos() {
         vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
     
         procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
-    
 
     }
-
+   
 
     function esCarrito() {
         console.log('estoy en carrito')
@@ -85,19 +72,5 @@ function cargarEventos() {
     }
 
 
-function esElResto() {
-    console.log('no estoy en carrito')
 
-    const vaciarCarritoBtn = carritoGeneral.querySelector('#vaciar-carrito')
-    const procesarPedidoBtn = carritoGeneral.querySelector('#procesar-pedido')
-
-
-    document.addEventListener('DOMContentLoaded', leerLocalStorage())
-
-    carritoGeneral.addEventListener('click', e => eliminarProducto(e))
-
-    vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
-
-    procesarPedidoBtn.addEventListener('click', e => procesarPedido2(e))
-}
 
