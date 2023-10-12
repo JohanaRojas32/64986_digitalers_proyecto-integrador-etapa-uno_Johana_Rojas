@@ -172,12 +172,13 @@ function vaciarLocalStorageTambien() {
 
 
 // BOTON PROCESAR PEDIDO:
+
+
 export function procesarPedido(e) {
     //e.preventDefault    - se podria poner pero no hace falta porque no es a ni form
 
     //verifico si tengo productos:
     if (queHayEnLS().length === 0 ) {
-        console.warn('el carrito esta vacio')
         //! ALERTA SWEETALERT:
         Swal.fire({
             title: 'Upsss!',
@@ -185,10 +186,10 @@ export function procesarPedido(e) {
             icon: 'error',
             background: '#F8F0E5',
             confirmButtonText: 'DE ACUERDO'
-          })
-    } else {
-        location.href = ('pages/carrito.html') || ('carrito.html')
-    }
+          });
+    } else if (queHayEnLS().length != 0 ) {
+        location.href = ('../pages/carrito.html')
+}
 }
 
 
